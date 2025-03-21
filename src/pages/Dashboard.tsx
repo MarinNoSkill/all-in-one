@@ -102,7 +102,7 @@ const Dashboard: React.FC = () => {
 
         // Fetch user's calorie goal
         try {
-          const response = await axios.get('http://localhost:5000/api/get-calorie-goal', {
+          const response = await axios.get('https://backend-all-in-one-fitness-app.onrender.com/api/get-calorie-goal', {
             params: { email },
           });
           if (response.data.calorieGoal) {
@@ -120,7 +120,7 @@ const Dashboard: React.FC = () => {
   const fetchFoods = async () => {
     if (!userEmail || !date) return;
     try {
-      const response = await axios.get<FoodsResponse>('http://localhost:5000/api/foods/user', {
+      const response = await axios.get<FoodsResponse>('https://backend-all-in-one-fitness-app.onrender.com/api/foods/user', {
         params: { email: userEmail, date: date },
       });
       setFoodsData(response.data);
@@ -146,7 +146,7 @@ const Dashboard: React.FC = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/set-calorie-goal', {
+      const response = await axios.post('https://backend-all-in-one-fitness-app.onrender.com/api/set-calorie-goal', {
         email: userEmail,
         calorieGoal: goal,
       });
@@ -187,7 +187,7 @@ const Dashboard: React.FC = () => {
 
     if (result.isConfirmed) {
       try {
-        const response = await axios.post('http://localhost:5000/api/set-calorie-goal', {
+        const response = await axios.post('https://backend-all-in-one-fitness-app.onrender.com/api/set-calorie-goal', {
           email: userEmail,
           calorieGoal: 0,
         });

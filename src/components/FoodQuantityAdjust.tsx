@@ -302,7 +302,7 @@ const FoodQuantityAdjust: React.FC = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/foods/add", requestBody);
+      const response = await axios.post("https://backend-all-in-one-fitness-app.onrender.com/api/foods/add", requestBody);
 
       await Swal.fire({
         title: "¡Éxito!",

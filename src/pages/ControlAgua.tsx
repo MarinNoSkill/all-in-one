@@ -25,7 +25,7 @@ const WaterBottleForm: React.FC = () => {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/water/add-bottle", {
+      const response = await axios.post("https://backend-all-in-one-fitness-app.onrender.com/api/water/add-bottle", {
         email: user.email,
         capacity,
       });

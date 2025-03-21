@@ -72,7 +72,7 @@ const RegisteredFoods: React.FC = () => {
     if (!userEmail || !dateParam) return;
     try {
       const response = await axios.get<FoodsResponse>(
-        'http://localhost:5000/api/foods/user',
+        'https://backend-all-in-one-fitness-app.onrender.com/api/foods/user',
         {
           params: { email: userEmail, date: dateParam },
         }
@@ -98,7 +98,7 @@ const RegisteredFoods: React.FC = () => {
       return;
     }
     try {
-      const response = await axios.delete('http://localhost:5000/api/foods/delete', {
+      const response = await axios.delete('https://backend-all-in-one-fitness-app.onrender.com/api/foods/delete', {
         data: { email: userEmail, id_registro: selectedFood.id_registro },
       });
       await Swal.fire({

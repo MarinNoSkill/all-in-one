@@ -170,7 +170,7 @@ const CalorieCalculator: React.FC = () => {
     setSelectedGoal(goal);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/set-calorie-goal", {
+      const response = await axios.post("https://backend-all-in-one-fitness-app.onrender.com/api/set-calorie-goal", {
         email: userEmail,
         calorieGoal: calorieValue,
       });

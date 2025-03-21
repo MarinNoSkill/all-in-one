@@ -55,7 +55,7 @@ const FoodSearch: React.FC = () => {
     setHasSearched(true);
 
     try {
-      const response = await axios.get("http://localhost:5000/api/foods/search", {
+      const response = await axios.get("https://backend-all-in-one-fitness-app.onrender.com/api/foods/search", {
         params: { query, max_results: 10 },
       });
       const foodResults = response.data.foods?.food || [];
@@ -127,7 +127,7 @@ const FoodSearch: React.FC = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/foods/add", requestBody);
+      const response = await axios.post("https://backend-all-in-one-fitness-app.onrender.com/api/foods/add", requestBody);
 
       await Swal.fire({
         title: "¡Éxito!",
